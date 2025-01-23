@@ -12,4 +12,5 @@
             "*.{css,scss,png,gif,ico,jpg,svg}"
         ]
     } 
+    
 }
