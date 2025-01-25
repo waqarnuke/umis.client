@@ -20,8 +20,8 @@ export class DashboardService {
     return this.http.get<cardDetail>(this.appurl + 'carddetail/GetByUserId',{params});
   }
 
-  CreateCard(values : any){
-    return this.http.post(this.appurl + 'carddetail', values);
+  CreateCard(values : cardDetail){
+    return this.http.post<cardDetail>(this.appurl + 'carddetail', values);
   }
 
   UpdateCard(id:number , values : any){
@@ -29,7 +29,7 @@ export class DashboardService {
                     .set('id',id)
                     console.log(id)
                     console.log(values)
-    return this.http.put(this.appurl + 'carddetail/'+id, values);
+    return this.http.put<cardDetail>(this.appurl + 'carddetail/'+id, values);
   }
 
   uploadImage(userId:string, file: File): Observable<any> {
