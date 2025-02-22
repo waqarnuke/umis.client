@@ -49,19 +49,31 @@ export class UserDetailComponent implements OnInit {
 
   constructor() {
     this.cardDetailsForm = this.fb.group({
-      name:['', Validators.required],
-      title:['',Validators.required],
-      phone:['',Validators.required],
-      email:['',[Validators.required, Validators.email]],
-      organization:['', Validators.required],                      
-      address:['', Validators.required],
-      city:['', Validators.required],
-      state:['', Validators.required],
-      zipCode:['', Validators.required],
-      weblink1:['', ],
-      weblink2:['', ],
-      weblink3:['', ],
-      weblink4:['', ],
+      name:['', [Validators.required, Validators.maxLength(20)]],
+      title:['',[Validators.required, Validators.maxLength(20)] ],
+      //phone:['',Validators.required, Validators.pattern('^[0-9]*$')],
+      phone:['',{
+        validators: [
+          Validators.required,
+          Validators.pattern(/^(1\s?)?(\([0-9]{3}\)|[0-9]{3})[\s.-]?[0-9]{3}[\s.-]?[0-9]{4}$/)
+        ]
+      }],
+      email:['',{
+        validators: [
+          Validators.required,
+          Validators.email,
+          Validators.maxLength(20)
+        ]
+      } ],
+      organization:['',[Validators.required, Validators.maxLength(20)]],                    
+      address:['', [Validators.required, Validators.maxLength(20)]  ],
+      city:['', [Validators.required, Validators.maxLength(20)] ],
+      state:['', [Validators.required, Validators.maxLength(2)] ],
+      zipCode:['', [Validators.required, Validators.maxLength(10)] ],
+      weblink1:['',  Validators.maxLength(100)],
+      weblink2:['', Validators.maxLength(100)],
+      weblink3:['', Validators.maxLength(100)],
+      weblink4:['', Validators.maxLength(100)],
       userId:['', ],
       id:[0],
     });

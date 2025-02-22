@@ -49,27 +49,27 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <app-text-input label="userId" formControlName="userId" class="hidden"/>
-                    <app-text-input label="Name" formControlName="name"/>
-                    <app-text-input label="Title" formControlName="title"/>
+                    <app-text-input label="Name" formControlName="name" maxLength="20"/>
+                    <app-text-input label="Title" formControlName="title" maxLength="20"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <app-text-input label="Phone" formControlName="phone"/>
                     <app-text-input label="Email" formControlName="email"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <app-text-input label="Organization" formControlName="organization"/>
-                    <app-text-input label="Address" formControlName="address"/>
+                    <app-text-input label="Organization" formControlName="organization" maxLength="20"/>
+                    <app-text-input label="Address" formControlName="address" maxLength="20"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                    <app-text-input label="City" formControlName="city"/>
-                    <app-text-input label="State" formControlName="state"/>
-                    <app-text-input label="Zip Code" formControlName="zipCode"/>
+                    <app-text-input label="City" formControlName="city" maxLength="20"/>
+                    <app-text-input label="State" formControlName="state" maxLength="2"/>
+                    <app-text-input label="Zip Code" formControlName="zipCode" maxLength="10"/>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <app-text-input label="Instagram Link" formControlName="weblink1"/>
-                    <app-text-input label="Facebook Link" formControlName="weblink2"/>
-                    <app-text-input label="Linkedin Link" formControlName="weblink3"/>
-                    <app-text-input label="X Link" formControlName="weblink4"/>
+                    <app-text-input label="Instagram Link" formControlName="weblink1" maxLength="100"/>
+                    <app-text-input label="Facebook Link" formControlName="weblink2"maxLength="100"/>
+                    <app-text-input label="Linkedin Link" formControlName="weblink3" maxLength="100"/>
+                    <app-text-input label="X Link" formControlName="weblink4" maxLength="100"/>
                 </div> 
                 @if(validationErrors){
                     <div class="mb-3 p-4 bg-red-100 text-red-600" *ngIf="validationErrors.length > 0">
